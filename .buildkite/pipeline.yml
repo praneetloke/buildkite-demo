@@ -1,7 +1,7 @@
 cache:
   paths:
     - "$HOME/.pulumi"
-  size: "10g"
+  size: "20g"
 
 env:
   PULUMI_STACK: dev
