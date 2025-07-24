@@ -1,0 +1,14 @@
+{
+  "name": "buildkite-demo",
+  "description": "a simple program using the random provider",
+  "main": "index.ts",
+  "license": "MIT",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Praneet Loke",
+  "dependencies": {
+    "@pulumi/pulumi": "*",
+    "@pulumi/random": "4.14.0"
+  }
+}

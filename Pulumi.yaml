@@ -1,0 +1,10 @@
+name: buildkite-demo
+runtime:
+  name: nodejs
+  options:
+    packagemanager: npm
+description: a simple program using the random provider
+config:
+  pulumi:tags:
+    value:
+      pulumi:template: https://www.pulumi.com/ai/api/project/0aed23ad-24f2-47a8-a70c-cbc2487de507.zip
