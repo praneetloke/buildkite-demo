@@ -1,8 +1,14 @@
+cache:
+  paths:
+    - "$HOME/.pulumi"
+  size: "10g"
+
 env:
   PULUMI_STACK: dev
 
 steps:
   - label: ":pulumi: Preview"
+    cache: "node_modules"
     commands:
       - npm install
       - pulumi preview -s $PULUMI_STACK | tee preview
