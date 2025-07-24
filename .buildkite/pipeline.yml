@@ -14,7 +14,7 @@ steps:
       - pulumi preview -s $PULUMI_STACK | tee preview
       - printf '```\n%b\n```\n' "$(cat preview)" | buildkite-agent annotate --style "info"
     plugins:
-      - setup-pulumi:
+      - praneetloke/setup-pulumi:
           use-oidc: true
           audience: urn:pulumi:org:praneetloke
           pulumi-token-type: urn:pulumi:token-type:access_token:personal
