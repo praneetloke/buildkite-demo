@@ -1,3 +1,21 @@
+cache:
+  paths:
+    - "$HOME/.pulumi"
+  size: "20g"
+
+env:
+  PULUMI_STACK: dev
+
 steps:
-  - label: "Example Test"
-    command: echo "Hello!"
+  - label: ":pulumi: Preview"
+    cache: "node_modules"
+    commands:
+      - npm install
+      - pulumi preview -s $PULUMI_STACK | tee preview
+      - printf '```\n%b\n```\n' "$(cat preview)" | buildkite-agent annotate --style "info"
+    plugins:
+      - pulumi#v1.0.0:
+          use-oidc: true
+          audience: urn:pulumi:org:praneetloke
+          pulumi-token-type: urn:pulumi:token-type:access_token:personal
+          pulumi-token-scope: "user:praneetloke"
