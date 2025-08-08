@@ -14,6 +14,11 @@ steps:
       - pulumi preview -s $PULUMI_STACK | tee preview
       - printf '```\n%b\n```\n' "$(cat preview)" | buildkite-agent annotate --style "info"
     plugins:
+      - secrets:
+        variables:
+          GRAPHQL_API_TOKEN: GRAPHQL_API_TOKEN
+      - praneetloke/nx-set-shas:
+          api-token: GRAPHQL_API_TOKEN
       - pulumi#v1.0.0:
           use-oidc: true
           audience: urn:pulumi:org:praneetloke
