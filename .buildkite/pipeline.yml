@@ -18,8 +18,7 @@ steps:
       - secrets:
           variables:
             GRAPHQL_API_TOKEN: GRAPHQL_API_TOKEN
-      - praneetloke/nx-set-shas:
-          api_token: $GRAPHQL_API_TOKEN
+      - praneetloke/nx-set-shas
       - pulumi#v1.0.0:
           use-oidc: true
           audience: urn:pulumi:org:praneetloke
