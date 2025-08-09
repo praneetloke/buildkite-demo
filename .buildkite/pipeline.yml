@@ -16,8 +16,8 @@ steps:
       - printf '```\n%b\n```\n' "$(cat preview)" | buildkite-agent annotate --style "info"
     plugins:
       - secrets:
-        variables:
-          GRAPHQL_API_TOKEN: GRAPHQL_API_TOKEN
+          variables:
+            GRAPHQL_API_TOKEN: GRAPHQL_API_TOKEN
       - praneetloke/nx-set-shas:
           api-token: GRAPHQL_API_TOKEN
       - pulumi#v1.0.0:
