@@ -1,4 +1,4 @@
-# Caching is not supported on self-hosted agents...
+# Caching is not supported on self-hosted agents.
 # cache:
 #  paths:
 #    - "$HOME/.pulumi"
